@@ -82,12 +82,13 @@ def main():
         hi, mod = (float(x) for x in a.rating_cutoffs.split(","))
         cut = (hi, mod)
 
+    from copy import copy
+
     wb = openpyxl.load_workbook(a.template)
     ws = wb.active
     rows = load_data(a.data)
-
-    # rows that contain merged cells (e.g. a footnote row) are left untouched
-    merged_rows = {cr.min_row for cr in ws.merged_cells.ranges}
+    n = len(rows)
+    flags = []
 
     def put(r, c, v):
         cell = ws.cell(r, c)
@@ -96,15 +97,32 @@ def main():
         cell.value = v
         return True
 
-    # clear existing example/placeholder value cells (keep formatting) below header
-    for r in range(a.start_row, ws.max_row + 1):
-        if r in merged_rows:
-            continue
+    # ---- locate a SUMMARY/footer block (merged rows at/after start_row) ----
+    footer_merges = [(cr.min_row, cr.min_col, cr.max_row, cr.max_col)
+                     for cr in ws.merged_cells.ranges if cr.min_row >= a.start_row]
+    first_footer = min((r for r, *_ in footer_merges), default=None)
+    footer_style = None
+    if first_footer is not None:
+        # remember styling + column spans of the footer, then remove it
+        footer_style = {c: (copy(ws.cell(first_footer, c).font),
+                            copy(ws.cell(first_footer, c).fill),
+                            copy(ws.cell(first_footer, c).alignment),
+                            ws.cell(first_footer, c).number_format)
+                        for c in range(1, 16)
+                        if not isinstance(ws.cell(first_footer, c), MergedCell)}
+        spans = [(c1, c2) for (r1, c1, r2, c2) in footer_merges if r1 == first_footer]
+        for (r1, c1, r2, c2) in footer_merges:
+            ws.unmerge_cells(start_row=r1, start_column=c1, end_row=r2, end_column=c2)
+        for r in range(first_footer, first_footer + 1):
+            for c in range(1, 16):
+                put(r, c, None)
+
+    # clear existing example/placeholder value cells (keep formatting)
+    for r in range(a.start_row, max(ws.max_row, a.start_row + n) + 1):
         for c in range(1, 16):
             put(r, c, None)
 
     r_out = a.start_row
-    flags = []
     for i, rec in enumerate(rows, 1):
         if "Study" not in rec or rec.get("Study") in (None, ""):
             rec["Study"] = i
@@ -119,15 +137,33 @@ def main():
             s = num(rec["JBI_Score"])
             rec["Quality_Rating"] = ("High" if s >= cut[0]
                                      else "Moderate" if s >= cut[1] else "Low")
-        if r_out in merged_rows:
-            flags.append(f"row {r_out}: skipped (merged footer row); "
-                         "increase template rows if more studies are needed")
-            r_out += 1
-            continue
         for key, col in COLS.items():
             if key in rec and rec[key] not in (None, ""):
                 put(r_out, col, rec[key])
         r_out += 1
+
+    # ---- rebuild the SUMMARY footer one blank row below the data ----
+    if first_footer is not None:
+        fr = r_out + 1
+        ratings = [str(rec.get("Quality_Rating") or "").strip().lower() for rec in rows]
+        got = sum(1 for x in ratings if x in ("high", "moderate", "low"))
+        if got == n and n:
+            hi = ratings.count("high"); mod = ratings.count("moderate"); lo = ratings.count("low")
+            summary = (f"High quality: {hi}/{n} ({round(100*hi/n)}%)   |   "
+                       f"Moderate quality: {mod}/{n} ({round(100*mod/n)}%)   |   "
+                       f"Low quality: {lo}/{n} ({round(100*lo/n)}%)")
+        else:
+            summary = ("Quality ratings pending full-text appraisal "
+                       "(High/Moderate/Low = NR)")
+        put(fr, 1, f"SUMMARY (n = {n} studies)")
+        put(fr, 5, summary)
+        if footer_style:
+            for c, (font, fill, align, numfmt) in footer_style.items():
+                cell = ws.cell(fr, c)
+                cell.font = copy(font); cell.fill = copy(fill)
+                cell.alignment = copy(align); cell.number_format = numfmt
+        for (c1, c2) in spans:
+            ws.merge_cells(start_row=fr, start_column=c1, end_row=fr, end_column=c2)
 
     wb.save(a.out)
     print(f"Wrote {r_out - a.start_row} appraisal row(s) -> {a.out}")
