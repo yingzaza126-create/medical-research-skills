@@ -1,5 +1,38 @@
 # Abstract-level extraction — AMR/Sepsis BSI meta-analysis (62 EndNote records)
 
+## 🔴 อัปเดต (จากไฟล์/สกรีนช็อตรอบล่าสุด)
+
+**1) ไฟล์ XML `3AMR_Sepsis_MetaAnalysis_2026.xml` ที่อัปโหลดล่าสุด = เสีย** — ขนาด 735 ไบต์
+มี **record เดียวและว่างเปล่า** (rec 85649 eisenberg, ไม่มี title/author/abstract)
+→ นี่คือสาเหตุที่ "ข้อมูลมาไม่ครบ" การ export ออกมาแค่ 1 รายการ ไม่ใช่ 62 รายการ
+ข้อมูล study ทั้งหมดในไฟล์นี้จึงยังมาจากไฟล์ 62-record ชุดก่อนหน้า (abstract-level)
+
+**2) PRISMA Identification เติมเพิ่มจากสกรีนช็อต EndNote (group counts):**
+| แหล่ง | n |
+|---|---|
+| PubMed | 11,095 |
+| Scopus | 14,191 |
+| Web of Science | 5,481 |
+| BMC | 1,983 |
+| Google Scholar | 141 |
+| JAMA | 16 |
+| **Databases รวม** | **32,907** |
+| CENTRAL (register) | 6 |
+| pdf.V2 (มี PDF = reports retrieved/assessed) | 62 |
+
+→ PRISMA docx ตอนนี้เติม: **Records identified — Databases n=32,907, Registers n=6;
+Reports assessed for eligibility n=62** ⚠️ ตัวเลขนี้อ่านจากสกรีนช็อต (group counts) —
+**โปรดยืนยัน** และให้ตัวเลข **duplicates removed / records screened / records excluded /
+studies included** จาก group `Duplicate_Audit`, `Suspected_Duplicates`, `Unique_Records`,
+`Deleted_Other_Reasons` เพื่อเติม node ที่เหลือให้ครบ (ยังเว้นไว้ ไม่เดา)
+
+**3) วิธี re-export EndNote ให้ได้ไฟล์ที่ใช้ได้จริง (สำคัญ):**
+- เลือก group **pdf.V2 (62)** → เลือกทุกรายการ (Ctrl+A)
+- **File → Export** → Output style = **XML** (หรือ RIS) → ติ๊ก **Export Selected References**
+- ถ้าต้องการให้สกัด outcome จริงจาก full text → แนบ **PDF** มาด้วย (zip รวม 62 ไฟล์)
+
+---
+
 **⚠️ อ่านก่อนใช้ / Read first**
 
 1. ไฟล์ EndNote ที่อัปโหลดรอบนี้ **เหมือนไฟล์เดิมทุกไบต์ (MD5 ตรงกัน)** — ยังไม่มี PDF ฉบับเต็ม
