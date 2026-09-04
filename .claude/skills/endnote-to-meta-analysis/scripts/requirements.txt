@@ -1,0 +1,4 @@
+# Python dependencies for the endnote-to-meta-analysis helper scripts
+openpyxl>=3.1     # fill_meta_template.py, fill_jbi_template.py
+lxml>=4.9         # parse_endnote.py (EndNote XML)
+# fill_prisma.py uses only the standard library (zipfile, re, json)

@@ -1,0 +1,9 @@
+{
+  "databases": 32907, "registers": 6,
+  "duplicates_removed": "NR", "automation_removed": "NR", "other_removed": "NR",
+  "records_screened": "NR", "records_excluded": "NR",
+  "reports_sought": "NR", "reports_not_retrieved": "NR",
+  "reports_assessed": 62,
+  "reasons": [{"n":"NR"},{"n":"NR"},{"n":"NR"}],
+  "studies_included": "NR", "reports_included": "NR"
+}

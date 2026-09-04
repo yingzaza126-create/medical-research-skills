@@ -1,0 +1,2 @@
+Study_ID,Author,Year,Study_Type,Country,Intervention,Control,Sample_Size_Intervention,Sample_Size_Control,Success_Intervention,Success_Control,Mean_Intervention,SD_Intervention,Mean_Control,SD_Control,SE_Intervention,SE_Control,OR,CI_95_Lower,CI_95_Upper,P_value,Follow_up_weeks,Quality_Score
+S01,"Aiken et al.",2023,Retrospective cohort,Kenya,3GC-resistant BSI,3GC-susceptible BSI,NR,NR,NR,NR,NR,NR,NR,NR,NR,NR,1.30,1.10,1.54,NR,4,High

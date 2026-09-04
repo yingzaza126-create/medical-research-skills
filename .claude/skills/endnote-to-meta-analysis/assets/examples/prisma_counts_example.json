@@ -1,0 +1,19 @@
+{
+  "databases": 1240,
+  "registers": 0,
+  "duplicates_removed": 210,
+  "automation_removed": 0,
+  "other_removed": 0,
+  "records_screened": 1030,
+  "records_excluded": 935,
+  "reports_sought": 95,
+  "reports_not_retrieved": 4,
+  "reports_assessed": 91,
+  "reasons": [
+    {"label": "Wrong outcome", "n": 40},
+    {"label": "Wrong study design", "n": 30},
+    {"label": "Conference abstract only", "n": 9}
+  ],
+  "studies_included": 12,
+  "reports_included": 12
+}
