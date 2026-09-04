@@ -133,7 +133,12 @@ def main():
         except (TypeError, ValueError):
             return None
 
-    reasons_total = sum((r.get("n") or 0) for r in (counts.get("reasons") or []))
+    def _num_or_zero(x):
+        try:
+            return float(x)
+        except (TypeError, ValueError):
+            return 0
+    reasons_total = sum(_num_or_zero(r.get("n")) for r in (counts.get("reasons") or []))
     ident = (n("databases") or 0) + (n("registers") or 0)
     removed = (n("duplicates_removed") or 0) + (n("automation_removed") or 0) + (n("other_removed") or 0)
     warn = []
