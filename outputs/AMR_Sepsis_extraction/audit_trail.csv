@@ -1,0 +1,34 @@
+﻿Study_ID,Author,Field,Value,Source,Confidence,Note
+S05,Allel,Sample_Size_Intervention,638,Abstract,Low,"N per arm derived from 1349 episodes x47.3% ARB (derived, Low conf); event counts NR in abstract"
+S05,Allel,Sample_Size_Control,711,Abstract,Moderate,"N per arm derived from 1349 episodes x47.3% ARB (derived, Low conf); event counts NR in abstract"
+S05,Allel,OR (crude),1.42,Abstract,Moderate,"N per arm derived from 1349 episodes x47.3% ARB (derived, Low conf); event counts NR in abstract"
+S05,Allel,OR (adjusted),1.35,Abstract,Moderate,"N per arm derived from 1349 episodes x47.3% ARB (derived, Low conf); event counts NR in abstract"
+S06,Alwashaish,Sample_Size_Intervention,252,Abstract,Low,"r_n=673x37.4% (derived); events=round(%xN) (derived, Low conf); crude OR computable from 2x2"
+S06,Alwashaish,Sample_Size_Control,421,Abstract,Moderate,"r_n=673x37.4% (derived); events=round(%xN) (derived, Low conf); crude OR computable from 2x2"
+S06,Alwashaish,Success_Intervention,81,Abstract,Low,"r_n=673x37.4% (derived); events=round(%xN) (derived, Low conf); crude OR computable from 2x2"
+S06,Alwashaish,Success_Control,79,Abstract,Low,"r_n=673x37.4% (derived); events=round(%xN) (derived, Low conf); crude OR computable from 2x2"
+S06,Alwashaish,OR (adjusted),1.9,Abstract,Moderate,"r_n=673x37.4% (derived); events=round(%xN) (derived, Low conf); crude OR computable from 2x2"
+S12,Calderon-Parra,Sample_Size_Intervention,30,Abstract,Low,"events=round(0.40x30)=12, round(0.109x156)=17 (derived, Low conf); crude OR~5.45 computable"
+S12,Calderon-Parra,Sample_Size_Control,156,Abstract,Moderate,"events=round(0.40x30)=12, round(0.109x156)=17 (derived, Low conf); crude OR~5.45 computable"
+S12,Calderon-Parra,Success_Intervention,12,Abstract,Low,"events=round(0.40x30)=12, round(0.109x156)=17 (derived, Low conf); crude OR~5.45 computable"
+S12,Calderon-Parra,Success_Control,17,Abstract,Low,"events=round(0.40x30)=12, round(0.109x156)=17 (derived, Low conf); crude OR~5.45 computable"
+S12,Calderon-Parra,OR (adjusted),3.97,Abstract,Moderate,"events=round(0.40x30)=12, round(0.109x156)=17 (derived, Low conf); crude OR~5.45 computable"
+S14,Chotiprasitsakul,Sample_Size_Intervention,75,Abstract,Low,"aHR 0.83 for CRAB (adjusted, NS); events=round(%xN) (derived); crude 2x2 computable"
+S14,Chotiprasitsakul,Sample_Size_Control,47,Abstract,Moderate,"aHR 0.83 for CRAB (adjusted, NS); events=round(%xN) (derived); crude 2x2 computable"
+S14,Chotiprasitsakul,Success_Intervention,50,Abstract,Low,"aHR 0.83 for CRAB (adjusted, NS); events=round(%xN) (derived); crude 2x2 computable"
+S14,Chotiprasitsakul,Success_Control,12,Abstract,Low,"aHR 0.83 for CRAB (adjusted, NS); events=round(%xN) (derived); crude 2x2 computable"
+S28,Kong,Sample_Size_Intervention,144,Abstract,Moderate,aHR 1.37 for CRE vs comparator (adjusted); per-arm mortality n NR in abstract; obtain from full text
+S28,Kong,Sample_Size_Control,144,Abstract,Moderate,aHR 1.37 for CRE vs comparator (adjusted); per-arm mortality n NR in abstract; obtain from full text
+S28,Kong,OR (adjusted),1.37,Abstract,Moderate,aHR 1.37 for CRE vs comparator (adjusted); per-arm mortality n NR in abstract; obtain from full text
+S32,Li,Sample_Size_Intervention,90,Abstract,Low,"events=round(0.211x90)=19, round(0.093x324)=30 (derived, Low conf); no adjusted OR for mortality-by-resistance in abstract"
+S32,Li,Sample_Size_Control,324,Abstract,Moderate,"events=round(0.211x90)=19, round(0.093x324)=30 (derived, Low conf); no adjusted OR for mortality-by-resistance in abstract"
+S32,Li,Success_Intervention,19,Abstract,Low,"events=round(0.211x90)=19, round(0.093x324)=30 (derived, Low conf); no adjusted OR for mortality-by-resistance in abstract"
+S32,Li,Success_Control,30,Abstract,Low,"events=round(0.211x90)=19, round(0.093x324)=30 (derived, Low conf); no adjusted OR for mortality-by-resistance in abstract"
+S35,Olivares-Navarro,Sample_Size_Intervention,322,Abstract,Low,"events=round(0.146x322)=47, round(0.096x2072)=199 (derived, Low conf); crude OR 1.61 reported directly"
+S35,Olivares-Navarro,Sample_Size_Control,2072,Abstract,Moderate,"events=round(0.146x322)=47, round(0.096x2072)=199 (derived, Low conf); crude OR 1.61 reported directly"
+S35,Olivares-Navarro,Success_Intervention,47,Abstract,Low,"events=round(0.146x322)=47, round(0.096x2072)=199 (derived, Low conf); crude OR 1.61 reported directly"
+S35,Olivares-Navarro,Success_Control,199,Abstract,Low,"events=round(0.146x322)=47, round(0.096x2072)=199 (derived, Low conf); crude OR 1.61 reported directly"
+S35,Olivares-Navarro,OR (crude),1.61,Abstract,Moderate,"events=round(0.146x322)=47, round(0.096x2072)=199 (derived, Low conf); crude OR 1.61 reported directly"
+S35,Olivares-Navarro,OR (adjusted),1.12,Abstract,Moderate,"events=round(0.146x322)=47, round(0.096x2072)=199 (derived, Low conf); crude OR 1.61 reported directly"
+S36,Ozcelik,Sample_Size_Intervention,113,Abstract,Moderate,no significant survival difference; per-arm mortality n NR in abstract; obtain 2x2 from full text
+S36,Ozcelik,Sample_Size_Control,76,Abstract,Moderate,no significant survival difference; per-arm mortality n NR in abstract; obtain 2x2 from full text
